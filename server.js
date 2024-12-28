@@ -12,7 +12,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-app.use(cors());
+app.use(cors({
+  origin: '*', 
+}));
+
 app.use(express.json());
 
 let conversationHistory = [];
